@@ -72,7 +72,6 @@ router.post("/signup", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   //check for entered username in DB if found then compare password by hashing if matched then login
-
   const { username, password } = req.body;
   const existingUser = await User.findOne({ username: username });
   if (!existingUser) {
